@@ -2,9 +2,9 @@ import { useState, useEffect } from 'react'
 import { format } from 'date-fns'
 
 const RATINGS = [
-  { value: 'good', label: 'Good', color: 'bg-green-500', hoverColor: 'hover:bg-green-600' },
-  { value: 'average', label: 'Avg', color: 'bg-yellow-500', hoverColor: 'hover:bg-yellow-600' },
-  { value: 'bad', label: 'Bad', color: 'bg-red-500', hoverColor: 'hover:bg-red-600' },
+  { value: 'good', label: 'Good', color: 'bg-emerald-300', hoverColor: 'hover:bg-emerald-400' },
+  { value: 'average', label: 'Avg', color: 'bg-amber-200', hoverColor: 'hover:bg-amber-300' },
+  { value: 'bad', label: 'Bad', color: 'bg-rose-300', hoverColor: 'hover:bg-rose-400' },
 ]
 
 export function EntryModal({
@@ -103,12 +103,12 @@ export function EntryModal({
                   <button
                     key={rating.value}
                     onClick={() => handleRatingClick(category.id, rating.value)}
-                    className={`flex-1 py-2.5 px-2 rounded-lg text-white text-sm font-medium transition ${
+                    className={`flex-1 py-2.5 px-2 rounded-lg text-gray-700 text-sm font-medium transition ${
                       rating.color
                     } ${rating.hoverColor} ${
                       categoryEntries[category.id]?.rating === rating.value
-                        ? 'ring-2 ring-offset-2 ring-gray-900'
-                        : 'opacity-50 hover:opacity-100'
+                        ? 'ring-2 ring-offset-2 ring-gray-400'
+                        : 'opacity-60 hover:opacity-100'
                     }`}
                   >
                     {rating.label}
@@ -130,7 +130,7 @@ export function EntryModal({
         <div className="p-4 sm:p-6 border-t border-gray-200 flex gap-3 flex-shrink-0 bg-gray-50">
           <button
             onClick={handleSave}
-            className="flex-1 py-3 px-4 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition"
+            className="flex-1 py-3 px-4 bg-gray-900 hover:bg-gray-800 text-white font-medium rounded-lg transition"
           >
             Save
           </button>

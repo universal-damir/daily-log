@@ -42,7 +42,6 @@ export function HeatmapCalendar({
         const date = addDays(weekStart, day)
         const isInYear = date.getFullYear() === year
 
-        // Track month changes on Sundays (first day of week)
         if (day === 0 && isInYear) {
           const month = date.getMonth()
           if (month !== currentMonth) {
@@ -81,18 +80,18 @@ export function HeatmapCalendar({
 
   return (
     <div className="bg-white rounded-2xl p-8 shadow-lg">
-      <div className="flex justify-between items-center mb-8">
+      <div className="flex justify-between items-center mb-6">
         <h2 className="text-2xl font-bold text-gray-900">{year}</h2>
         <CalendarLegend />
       </div>
 
       {/* Month labels */}
-      <div className="relative h-6 ml-12 mb-2">
+      <div className="relative h-5 ml-12 mb-3">
         {monthLabels.map(({ month, weekIndex }, i) => (
           <span
             key={`${month}-${i}`}
-            className="absolute text-sm text-gray-500 font-medium"
-            style={{ left: `${weekIndex * 15}px` }}
+            className="absolute text-xs text-gray-400 font-medium"
+            style={{ left: `${weekIndex * 17}px` }}
           >
             {month}
           </span>

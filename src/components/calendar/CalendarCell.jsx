@@ -1,10 +1,10 @@
 import { format } from 'date-fns'
 
 const RATING_COLORS = {
-  good: 'bg-green-500',
-  average: 'bg-yellow-400',
-  bad: 'bg-red-500',
-  empty: 'bg-gray-200',
+  good: 'bg-emerald-300',
+  average: 'bg-amber-200',
+  bad: 'bg-rose-300',
+  empty: 'bg-gray-100',
 }
 
 export function CalendarCell({ date, rating, onClick, isToday, disabled }) {
@@ -18,7 +18,7 @@ export function CalendarCell({ date, rating, onClick, isToday, disabled }) {
     <button
       onClick={() => onClick?.(date)}
       className={`w-[14px] h-[14px] rounded-[3px] ${colorClass} transition-all hover:scale-110 ${
-        isToday ? 'ring-2 ring-blue-500 ring-offset-1' : ''
+        isToday ? 'ring-2 ring-blue-400 ring-offset-1' : ''
       }`}
       title={format(date, 'EEEE, MMM d, yyyy')}
     />
